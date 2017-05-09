@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+<f:view contentType="text/html; charset=iso-8859-1"/>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"/>
+	<link rel="stylesheet" type="text/css" href="css/formato.css"/>
+	<style type="text/css"> p {text-align: center; } </style>
+	<script type="text/javascript" src="js/validacion.js"> </script>
+	<title>Editar Persona</title>
+</head>
+<h:body bgcolor="white">
+<h:form>
+	<fieldset>
+		<legend> Formulario Editar Persona </legend>
+		<table> 
+            <tr>
+               <td>Id :</td>
+               <td><h:outputText id="id" value="#{formularioPersonaManagedBean.id}" /> </td>
+            </tr>
+            <tr>
+               <td>Nombre :</td>
+               <td><h:inputText size = "30" value="#{formularioPersonaManagedBean.nombre}" /></td>
+            </tr>
+            <tr>
+               <td>Apellidos :</td>
+               <td><h:inputText size = "30" value="#{formularioPersonaManagedBean.apellidos}" /></td>
+            </tr>
+            <tr>
+               <td>Direccion :</td>
+               <td><h:inputText size = "30" value="#{formularioPersonaManagedBean.direccion}" /></td>
+            </tr>
+            <tr>
+               <td>Edad :</td>
+               <td><h:inputText size = "30" value="#{formularioPersonaManagedBean.edad}" >
+							<f:converter converterId="javax.faces.Integer"></f:converter>
+						</h:inputText></td>
+            </tr>            
+            <tr>
+               <td>Email :</td>
+               <td><h:inputText size = "30" value="#{formularioPersonaManagedBean.email}" /></td>
+            </tr>           
+            <tr>
+               <td> </td>
+               <td><h:commandButton value = "Salvar" 
+                  action="#{formularioPersonaManagedBean.salvarPersona}" /></td>
+            </tr>
+       </table>		
+	</fieldset>	
+</h:form>
+</h:body>
+</html>

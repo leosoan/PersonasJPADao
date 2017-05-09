@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html">
+
+<f:view contentType="text/html">
+	<body>
+			<h:dataTable id="tabla1" value="Persona1" var="persona1" border="1">
+				<h:column>
+						<h:form>
+						<td>Nombre :
+						<h:inputText id="nombre" value="#{formularioPersonaManagedBean.nombre}"/> 
+						<h:commandButton action="#{formularioPersonaManagedBean.filtrar}" 
+							value="Filtrar" />
+						</td>
+						</h:form>
+				</h:column>
+				<h:column>
+						<h:form>
+						<td>
+						<h:commandButton action="#{formularioPersonaManagedBean.formularioInsertar}" 
+						 value="Insertar Persona"/>	
+						 </td>
+						</h:form>
+				</h:column>
+			</h:dataTable>
+			<br/>		
+			<h:dataTable id="tabla" value="#{formularioPersonaManagedBean.personas}" var="persona" border="1">
+					<h:column>
+						<td>
+						<h:outputText value="#{persona.id}"/>
+						</td>
+					</h:column>
+					<h:column>
+						<td>
+						<h:outputText value="#{persona.nombre}"/>
+						<h> </h>
+						<h:outputText value="#{persona.apellidos}"/>
+						<h> </h>
+						<h:outputText value="#{persona.direccion}"/>
+						<h> </h>						
+						<h:outputText value="#{persona.edad}"/>
+						<h> </h>
+						<h:outputText value="#{persona.email}"/>
+						</td>
+					</h:column>
+					<h:column>
+						<h:form>
+						<td>
+						<h:commandButton  actionListener="#{formularioPersonaManagedBean.borrar}" value="Borrar" >
+						<f:param name="id" value="#{persona.id}" />
+						</h:commandButton>
+						</td>
+						</h:form>
+					</h:column>				
+					<h:column>
+						<h:form>
+						<td>
+						<h:commandButton  action="#{formularioPersonaManagedBean.editar}" 
+						value="Editar">
+						<f:param name="id" value="#{persona.id}" />
+						</h:commandButton>
+						</td>						
+						</h:form>
+					</h:column>
+			</h:dataTable>		
+	</body>
+</f:view>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+	<managed-bean>
+		<description>formulario Persona ManagedBean</description>
+		<managed-bean-name>formularioPersonaManagedBean</managed-bean-name>
+		<managed-bean-class>com.agsnasoft.Persona.FormularioPersonaManagedBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+		<managed-property>
+			<property-name>persona</property-name>
+			<property-class>com.agsnasoft.Persona.bo.Persona</property-class>
+			<value>#{persona}</value>
+		</managed-property>
+	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>persona</managed-bean-name>
+		<managed-bean-class>com.agsnasoft.Persona.bo.Persona</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+</faces-config>
